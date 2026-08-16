@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ResearchOS V1 · 论文分析工作台</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <h1>ResearchOS <span class="v">V1</span></h1>
+        <p>论文分析工作台</p>
+      </div>
+      <div id="dropzone" class="dropzone">
+        <input type="file" id="fileInput" accept=".pdf,.txt,.md" hidden>
+        <p>📄 拖入 PDF / 点击上传</p>
+        <span class="hint">支持 .pdf / .txt / .md</span>
+      </div>
+      <input id="searchBox" class="search" placeholder="搜索标题 / 作者 / 关键词…">
+      <ul id="paperList" class="paper-list"></ul>
+      <div class="sidebar-foot">
+        <span id="selCount">已选 0 篇</span>
+        <button id="btnClearSel" class="mini-btn">清空选择</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <nav class="tabs">
+        <button class="tab active" data-tab="detail">论文详情</button>
+        <button class="tab" data-tab="compare">论文对比</button>
+        <button class="tab" data-tab="gap">Research Gap</button>
+        <button class="tab" data-tab="qa">论文问答</button>
+      </nav>
+      <section id="view" class="view"></section>
+    </main>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
